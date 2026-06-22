@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Desenvolvimento Web</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,12 +14,34 @@
       margin: 0;
       padding: 0;
     }
+
     header {
       background: #0a74da;
       color: #fff;
       padding: 2rem 1.5rem;
       text-align: center;
     }
+
+    /* Botão */
+    .botao {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      background: linear-gradient(135deg, #00b4db, #0083b0);
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,.25);
+    }
+
+    .botao:hover {
+      transform: scale(1.08);
+      box-shadow: 0 12px 25px rgba(0,0,0,.35);
+    }
+
     main {
       max-width: 960px;
       margin: 1.5rem auto;
@@ -27,30 +50,37 @@
       box-shadow: 0 4px 16px rgba(0,0,0,0.08);
       border-radius: 12px;
     }
+
     h1, h2, h3 {
       margin-top: 1.5rem;
     }
+
     p {
       margin: 1rem 0;
     }
+
     .pillars {
       display: grid;
       gap: 1rem;
       grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
       margin-top: 1rem;
     }
+
     .pillar {
       border: 1px solid #d7e1ec;
       padding: 1rem;
       border-radius: 10px;
       background: #f8fbff;
     }
+
     .process {
       margin-top: 1rem;
     }
+
     .process li {
       margin: 0.75rem 0;
     }
+
     footer {
       text-align: center;
       color: #555;
@@ -60,20 +90,41 @@
     }
   </style>
 </head>
+
 <body>
+
   <header>
     <h1>Desenvolvimento Web</h1>
-    <p>Entenda o processo de criação de sites e aplicações e os pilares que sustentam a web.</p>
-     <a href="etc/pagina1.html">Página JavaScript</a>
+
+    <p>
+      Entenda o processo de criação de sites e aplicações e os pilares que sustentam a web.
+    </p>
+
+    <a href="etc/pagina1.html" class="botao">
+      💻 Página JavaScript
+    </a>
+
   </header>
+
   <main>
+
     <section>
       <h2>O que é desenvolvimento web?</h2>
-      <p>Desenvolvimento web é o processo de planejar, construir e manter sites e aplicações para a internet. Ele engloba desde a estrutura da informação até a interface do usuário, passando por desempenho, acessibilidade e publicação em servidores.</p>
+      <p>
+        Desenvolvimento web é o processo de planejar, construir e manter sites e aplicações para a internet.
+        Ele engloba desde a estrutura da informação até a interface do usuário, passando por desempenho,
+        acessibilidade e publicação em servidores.
+      </p>
     </section>
+
     <section>
       <h2>Processo de desenvolvimento</h2>
-      <p>O processo de desenvolvimento web envolve etapas claras que ajudam a entregar produtos melhores. Estas etapas garantem que o site funcione bem, seja fácil de usar e esteja pronto para o público.</p>
+
+      <p>
+        O processo de desenvolvimento web envolve etapas claras que ajudam a entregar produtos melhores.
+        Estas etapas garantem que o site funcione bem, seja fácil de usar e esteja pronto para o público.
+      </p>
+
       <ol class="process">
         <li><strong>Planejamento:</strong> Definir objetivos, público-alvo, requisitos funcionais e suas prioridades.</li>
         <li><strong>Design:</strong> Criar wireframes, protótipos e o layout visual pensando em usabilidade, identidade e responsividade.</li>
@@ -84,39 +135,54 @@
         <li><strong>Manutenção:</strong> Atualizar conteúdo, ajustar recursos, monitorar segurança e acompanhar o desempenho contínuo.</li>
       </ol>
     </section>
+
     <section>
       <h2>Pilares básicos da web</h2>
-      <p>Os pilares básicos da web representam os elementos fundamentais que tornam a construção de páginas e aplicações possível e escalável.</p>
+
+      <p>
+        Os pilares básicos da web representam os elementos fundamentais que tornam a construção de páginas e aplicações possível e escalável.
+      </p>
+
       <div class="pillars">
+
         <div class="pillar">
           <h3>HTML</h3>
           <p>HTML define a estrutura do conteúdo na web. Ele usa tags para marcar títulos, parágrafos, imagens, links e formulários.</p>
         </div>
+
         <div class="pillar">
           <h3>CSS</h3>
           <p>CSS cuida da apresentação visual. Com ele, é possível controlar cores, fontes, espaçamento, layout e responder ao tamanho da tela.</p>
         </div>
+
         <div class="pillar">
           <h3>JavaScript</h3>
           <p>JavaScript adiciona interatividade. Ele permite criar animações, validações, carregamentos dinâmicos de conteúdo e experiências mais ricas.</p>
         </div>
+
         <div class="pillar">
           <h3>Usabilidade</h3>
           <p>Usabilidade garante que as pessoas naveguem com facilidade. O design deve ser claro, acessível e consistente para diferentes públicos.</p>
         </div>
+
         <div class="pillar">
           <h3>Acessibilidade</h3>
           <p>Acessibilidade permite que pessoas com diferentes capacidades usem o site. Isso inclui textos alternativos, contraste adequado, navegação por teclado e informações semânticas.</p>
         </div>
+
         <div class="pillar">
           <h3>Responsividade</h3>
           <p>Responsividade assegura que o site funcione em celulares, tablets e desktops. O layout se adapta automaticamente ao tamanho da tela.</p>
         </div>
+
       </div>
     </section>
+
     <section>
       <h2>Por que esses pilares são importantes?</h2>
+
       <p>Esses pilares ajudam a construir experiências web que são:</p>
+
       <ul>
         <li>clara e intuitiva para os usuários;</li>
         <li>rápida e leve em diferentes dispositivos;</li>
@@ -124,9 +190,12 @@
         <li>fácil de manter e evoluir ao longo do tempo.</li>
       </ul>
     </section>
+
     <section>
       <h2>Boas práticas</h2>
+
       <p>Trabalhar com desenvolvimento web envolve algumas práticas que fazem diferença no resultado final:</p>
+
       <ul>
         <li>usar código semântico e organizado;</li>
         <li>separar estrutura, estilo e comportamento;</li>
@@ -135,9 +204,12 @@
         <li>manter o foco no usuário e no acesso universal.</li>
       </ul>
     </section>
+
   </main>
+
   <footer>
     <p>Desenvolvimento Web | Página informativa sobre estrutura e processo de criação de sites.</p>
   </footer>
+
 </body>
 </html>
