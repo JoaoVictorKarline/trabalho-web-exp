@@ -3,582 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desenvolvimento Web com JavaScript</title>
+  <title>Desenvolvimento Web</title>
   <style>
-    * {
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background: #f4f7fb;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.8;
-      color: #333;
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      min-height: 100vh;
     }
     header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 3rem 1.5rem;
+      background: #0a74da;
+      color: #fff;
+      padding: 2rem 1.5rem;
       text-align: center;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.1rem;
-      opacity: 0.95;
-    }
-    nav {
-      background: #333;
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-    nav li {
-      margin: 0 1.5rem;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #667eea;
     }
     main {
-      max-width: 1000px;
-      margin: 2rem auto;
+      max-width: 960px;
+      margin: 1.5rem auto;
       padding: 0 1.5rem 2rem;
-    }
-    section {
-      background: white;
-      margin-bottom: 2rem;
-      padding: 2rem;
-      border-radius: 12px;
+      background: #fff;
       box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-      animation: fadeIn 0.6s ease-in;
+      border-radius: 12px;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    h2 {
-      color: #667eea;
-      margin-bottom: 1rem;
-      font-size: 1.8rem;
-      border-bottom: 3px solid #667eea;
-      padding-bottom: 0.5rem;
-    }
-    h3 {
-      color: #764ba2;
+    h1, h2, h3 {
       margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
-      font-size: 1.3rem;
     }
     p {
-      margin-bottom: 1rem;
-      line-height: 1.8;
-    }
-    .image-container {
-      text-align: center;
-      margin: 2rem 0;
-    }
-    .image-container img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
-    }
-    .image-container img:hover {
-      transform: scale(1.02);
-    }
-    .image-caption {
-      text-align: center;
-      color: #666;
-      font-size: 0.95rem;
-      margin-top: 0.5rem;
-      font-style: italic;
-    }
-    .video-container {
-      margin: 2rem 0;
-      padding: 1rem;
-      background: #f8f9fa;
-      border-radius: 12px;
-      border-left: 4px solid #667eea;
-    }
-    .video-wrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 8px;
-    }
-    .video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 8px;
-    }
-    .video-title {
-      margin-bottom: 1rem;
-      font-weight: 600;
-      color: #333;
-    }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin: 1.5rem 0;
-    }
-    .feature-card {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 1.5rem;
-      border-radius: 12px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .feature-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
-    }
-    .feature-card h4 {
-      font-size: 1.2rem;
-      margin-bottom: 0.75rem;
-    }
-    .feature-card p {
-      margin: 0;
-      font-size: 0.95rem;
-    }
-    .code-example {
-      background: #2d2d2d;
-      color: #f8f8f2;
-      padding: 1.5rem;
-      border-radius: 8px;
-      overflow-x: auto;
       margin: 1rem 0;
-      font-family: 'Courier New', monospace;
-      font-size: 0.9rem;
-      line-height: 1.6;
     }
-    .code-example code {
-      color: #f8f8f2;
+    .pillars {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      margin-top: 1rem;
     }
-    .highlight {
-      background: #fff59d;
-      padding: 0.2rem 0.4rem;
-      border-radius: 4px;
-      font-weight: 500;
+    .pillar {
+      border: 1px solid #d7e1ec;
+      padding: 1rem;
+      border-radius: 10px;
+      background: #f8fbff;
     }
-    ul, ol {
-      margin-left: 1.5rem;
-      margin-bottom: 1rem;
+    .process {
+      margin-top: 1rem;
     }
-    li {
-      margin-bottom: 0.5rem;
+    .process li {
+      margin: 0.75rem 0;
     }
     footer {
       text-align: center;
-      color: #666;
-      padding: 1.5rem;
-      background: white;
-      margin-top: 2rem;
-      border-top: 2px solid #667eea;
-      border-radius: 12px;
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    a.back-link {
-      display: inline-block;
+      color: #555;
+      padding: 1rem;
+      border-top: 1px solid #e3e9f2;
       margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
-      background: #667eea;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-    a.back-link:hover {
-      background: #764ba2;
-    }
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-      nav ul {
-        flex-direction: column;
-      }
-      nav li {
-        margin: 0.5rem 0;
-      }
-      h2 {
-        font-size: 1.5rem;
-      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>🚀 Desenvolvimento Web com JavaScript</h1>
-    <p>Aprenda como JavaScript transforma a web em experiências interativas e dinâmicas</p>
+    <h1>Desenvolvimento Web</h1>
+    <p>Entenda o processo de criação de sites e aplicações e os pilares que sustentam a web.</p>
   </header>
-
-  <nav>
-    <ul>
-      <li><a href="#o-que-eh">O que é JavaScript?</a></li>
-      <li><a href="#por-que">Por que JavaScript?</a></li>
-      <li><a href="#recursos">Recursos</a></li>
-      <li><a href="#exemplos">Exemplos</a></li>
-      <li><a href="#videos">Vídeos</a></li>
-    </ul>
-  </nav>
-
   <main>
-    <!-- Seção: O que é JavaScript -->
-    <section id="o-que-eh">
-      <h2>O que é JavaScript?</h2>
-      <p>
-        JavaScript é uma linguagem de programação versátil e poderosa que traz <span class="highlight">interatividade</span> 
-        aos navegadores. Criado em 1995, tornou-se a linguagem padrão para desenvolvimento web no lado do cliente (frontend), 
-        mas também é utilizada no servidor (backend) através de plataformas como Node.js.
-      </p>
-      <p>
-        Diferentemente do HTML (que define a estrutura) e do CSS (que cuida da apresentação), 
-        JavaScript é responsável pelo <span class="highlight">comportamento</span> e <span class="highlight">interatividade</span> 
-        das páginas web.
-      </p>
-      
-      <div class="image-container">
-        <img src="https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=600&h=400&fit=crop" alt="JavaScript Code">
-        <div class="image-caption">JavaScript: A linguagem da interatividade web</div>
+    <section>
+      <h2>O que é desenvolvimento web?</h2>
+      <p>Desenvolvimento web é o processo de planejar, construir e manter sites e aplicações para a internet. Ele engloba desde a estrutura da informação até a interface do usuário, passando por desempenho, acessibilidade e publicação em servidores.</p>
+    </section>
+    <section>
+      <h2>Processo de desenvolvimento</h2>
+      <p>O processo de desenvolvimento web envolve etapas claras que ajudam a entregar produtos melhores. Estas etapas garantem que o site funcione bem, seja fácil de usar e esteja pronto para o público.</p>
+      <ol class="process">
+        <li><strong>Planejamento:</strong> Definir objetivos, público-alvo, requisitos funcionais e suas prioridades.</li>
+        <li><strong>Design:</strong> Criar wireframes, protótipos e o layout visual pensando em usabilidade, identidade e responsividade.</li>
+        <li><strong>Desenvolvimento:</strong> Construir o site usando HTML para a estrutura, CSS para o estilo e JavaScript para a interação.</li>
+        <li><strong>Testes:</strong> Verificar funcionamento em diferentes navegadores e dispositivos, corrigir erros e validar acessibilidade.</li>
+        <li><strong>Otimização:</strong> Melhorar performance, reduzir o tempo de carregamento e aplicar SEO básico para melhores resultados.</li>
+        <li><strong>Publicação:</strong> Enviar os arquivos para um servidor ou serviço de hospedagem, configurar domínio e certificar-se de que tudo esteja disponível online.</li>
+        <li><strong>Manutenção:</strong> Atualizar conteúdo, ajustar recursos, monitorar segurança e acompanhar o desempenho contínuo.</li>
+      </ol>
+    </section>
+    <section>
+      <h2>Pilares básicos da web</h2>
+      <p>Os pilares básicos da web representam os elementos fundamentais que tornam a construção de páginas e aplicações possível e escalável.</p>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>HTML</h3>
+          <p>HTML define a estrutura do conteúdo na web. Ele usa tags para marcar títulos, parágrafos, imagens, links e formulários.</p>
+        </div>
+        <div class="pillar">
+          <h3>CSS</h3>
+          <p>CSS cuida da apresentação visual. Com ele, é possível controlar cores, fontes, espaçamento, layout e responder ao tamanho da tela.</p>
+        </div>
+        <div class="pillar">
+          <h3>JavaScript</h3>
+          <p>JavaScript adiciona interatividade. Ele permite criar animações, validações, carregamentos dinâmicos de conteúdo e experiências mais ricas.</p>
+        </div>
+        <div class="pillar">
+          <h3>Usabilidade</h3>
+          <p>Usabilidade garante que as pessoas naveguem com facilidade. O design deve ser claro, acessível e consistente para diferentes públicos.</p>
+        </div>
+        <div class="pillar">
+          <h3>Acessibilidade</h3>
+          <p>Acessibilidade permite que pessoas com diferentes capacidades usem o site. Isso inclui textos alternativos, contraste adequado, navegação por teclado e informações semânticas.</p>
+        </div>
+        <div class="pillar">
+          <h3>Responsividade</h3>
+          <p>Responsividade assegura que o site funcione em celulares, tablets e desktops. O layout se adapta automaticamente ao tamanho da tela.</p>
+        </div>
       </div>
-
-      <h3>Características principais do JavaScript:</h3>
+    </section>
+    <section>
+      <h2>Por que esses pilares são importantes?</h2>
+      <p>Esses pilares ajudam a construir experiências web que são:</p>
       <ul>
-        <li><strong>Dinâmico:</strong> Executa em tempo real dentro do navegador</li>
-        <li><strong>Orientado a Objetos:</strong> Suporta programação orientada a objetos</li>
-        <li><strong>Funcional:</strong> Permite programação funcional e de ordem superior</li>
-        <li><strong>Assíncrono:</strong> Suporta operações não-bloqueantes</li>
-        <li><strong>Leve:</strong> Não requer compilação, funciona nativamente nos navegadores</li>
+        <li>clara e intuitiva para os usuários;</li>
+        <li>rápida e leve em diferentes dispositivos;</li>
+        <li>acessível para pessoas com necessidades especiais;</li>
+        <li>fácil de manter e evoluir ao longo do tempo.</li>
       </ul>
     </section>
-
-    <!-- Seção: Por que JavaScript? -->
-    <section id="por-que">
-      <h2>Por que JavaScript é essencial?</h2>
-      <p>
-        JavaScript transformou a web de um meio estático para um ambiente dinâmico e interativo. 
-        Hoje em dia, é impossível imaginar um site moderno sem JavaScript.
-      </p>
-
-      <div class="features">
-        <div class="feature-card">
-          <h4>✨ Interatividade</h4>
-          <p>Cria elementos interativos que respondem às ações do usuário</p>
-        </div>
-        <div class="feature-card">
-          <h4>⚡ Performance</h4>
-          <p>Processa informações no navegador sem carregar a página</p>
-        </div>
-        <div class="feature-card">
-          <h4>🔄 Atualizações em Tempo Real</h4>
-          <p>Atualiza conteúdo dinamicamente sem recarregar</p>
-        </div>
-        <div class="feature-card">
-          <h4>📱 Responsividade</h4>
-          <p>Adapta interfaces a diferentes dispositivos e tamanhos de tela</p>
-        </div>
-        <div class="feature-card">
-          <h4>🎨 Animações</h4>
-          <p>Cria animações e transições suaves</p>
-        </div>
-        <div class="feature-card">
-          <h4>📡 Comunicação</h4>
-          <p>Envia e recebe dados do servidor (AJAX, Fetch API)</p>
-        </div>
-      </div>
-
-      <div class="image-container">
-        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop" alt="Web Development">
-        <div class="image-caption">A tríade do desenvolvimento web: HTML, CSS e JavaScript</div>
-      </div>
-    </section>
-
-    <!-- Seção: Recursos -->
-    <section id="recursos">
-      <h2>O que você pode fazer com JavaScript?</h2>
-      
-      <h3>1. Manipulação do DOM (Document Object Model)</h3>
-      <p>
-        JavaScript permite acessar e modificar os elementos da página em tempo real:
-      </p>
-      <div class="code-example">
-<code>// Selecionar um elemento
-const titulo = document.getElementById('titulo');
-
-// Modificar seu conteúdo
-titulo.textContent = 'Olá, JavaScript!';
-
-// Alterar estilos
-titulo.style.color = '#667eea';
-titulo.style.fontSize = '2rem';</code>
-      </div>
-
-      <h3>2. Tratamento de Eventos</h3>
-      <p>
-        Responda às ações do usuário como cliques, digitação, movimento do mouse, etc:
-      </p>
-      <div class="code-example">
-<code>// Adicionar um evento de clique
-const botao = document.querySelector('button');
-
-botao.addEventListener('click', function() {
-  alert('Botão clicado!');
-  console.log('Usuário interagiu com a página');
-});</code>
-      </div>
-
-      <h3>3. Validação de Formulários</h3>
-      <p>
-        Valide dados do usuário antes de enviar para o servidor:
-      </p>
-      <div class="code-example">
-<code>// Validar email
-function validarEmail(email) {
-  const padrao = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return padrao.test(email);
-}
-
-if (validarEmail('usuario@exemplo.com')) {
-  console.log('Email válido!');
-}</code>
-      </div>
-
-      <h3>4. Requisições Assíncronas (AJAX/Fetch)</h3>
-      <p>
-        Comunique-se com o servidor sem recarregar a página:
-      </p>
-      <div class="code-example">
-<code>// Buscar dados do servidor
-fetch('https://api.exemplo.com/dados')
-  .then(resposta => resposta.json())
-  .then(dados => console.log(dados))
-  .catch(erro => console.error('Erro:', erro));</code>
-      </div>
-
-      <h3>5. Animações e Efeitos</h3>
-      <p>
-        Crie animações suaves e efeitos visuais:
-      </p>
-      <div class="code-example">
-<code>// Animar um elemento
-const elemento = document.querySelector('.box');
-let posicao = 0;
-
-function animar() {
-  posicao += 2;
-  elemento.style.transform = `translateX(${posicao}px)`;
-  
-  if (posicao < 300) {
-    requestAnimationFrame(animar);
-  }
-}
-
-animar();</code>
-      </div>
-    </section>
-
-    <!-- Seção: Exemplos Práticos -->
-    <section id="exemplos">
-      <h2>Exemplos Práticos Interativos</h2>
-
-      <h3>Exemplo 1: Contador Simples</h3>
-      <p>Clique nos botões para incrementar ou decrementar o contador:</p>
-      <div style="text-align: center; margin: 1.5rem 0;">
-        <p style="font-size: 2rem; color: #667eea; font-weight: bold; margin-bottom: 1rem;">
-          <span id="contador">0</span>
-        </p>
-        <button onclick="incrementar()" style="padding: 0.75rem 1.5rem; margin: 0 0.5rem; background: #667eea; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem;">➕ Incrementar</button>
-        <button onclick="decrementar()" style="padding: 0.75rem 1.5rem; margin: 0 0.5rem; background: #764ba2; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem;">➖ Decrementar</button>
-        <button onclick="resetar()" style="padding: 0.75rem 1.5rem; margin: 0 0.5rem; background: #999; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem;">🔄 Resetar</button>
-      </div>
-
-      <h3>Exemplo 2: Alterador de Tema</h3>
-      <p>Clique no botão para alternar entre tema claro e escuro:</p>
-      <div style="text-align: center; margin: 1.5rem 0;">
-        <button onclick="alternarTema()" style="padding: 0.75rem 1.5rem; background: #667eea; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem;">🌓 Alternar Tema</button>
-      </div>
-
-      <h3>Exemplo 3: Lista de Tarefas</h3>
-      <p>Adicione e remova tarefas da lista:</p>
-      <div style="margin: 1.5rem 0;">
-        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
-          <input type="text" id="novaTarefa" placeholder="Digite uma nova tarefa..." style="flex: 1; padding: 0.75rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
-          <button onclick="adicionarTarefa()" style="padding: 0.75rem 1.5rem; background: #667eea; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem;">Adicionar</button>
-        </div>
-        <ul id="listaTarefas" style="list-style: none; padding: 0;">
-          <li style="background: #f0f0f0; padding: 0.75rem; margin-bottom: 0.5rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
-            Exemplo de tarefa
-            <button onclick="this.parentElement.style.display='none'" style="background: #ff6b6b; color: white; border: none; padding: 0.25rem 0.75rem; border-radius: 4px; cursor: pointer;">Remover</button>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Seção: Vídeos Educacionais -->
-    <section id="videos">
-      <h2>📹 Vídeos Educacionais</h2>
-      <p>Assista a estes vídeos para aprofundar seus conhecimentos em JavaScript:</p>
-
-      <div class="video-container">
-        <div class="video-title">Vídeo 1: Introdução ao JavaScript (Curso em Vídeo)</div>
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/jS4aFq5-91M" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-      </div>
-
-      <div class="video-container">
-        <div class="video-title">Vídeo 2: JavaScript para Iniciantes (Traversy Media)</div>
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/W6NZfCO5tTE" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-      </div>
-
-      <div class="video-container">
-        <div class="video-title">Vídeo 3: DOM Manipulation (Código Facilito)</div>
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/1XiAKzJhWvk" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- Seção: Próximos Passos -->
     <section>
-      <h2>🎯 Próximos Passos</h2>
-      <p>Para dominar JavaScript e desenvolvimento web, siga este caminho de aprendizado:</p>
-      <ol>
-        <li><strong>Fundamentos:</strong> Variáveis, tipos de dados, operadores, condicionais e loops</li>
-        <li><strong>Funções:</strong> Aprenda a criar e usar funções efetivamente</li>
-        <li><strong>DOM:</strong> Manipule elementos HTML com JavaScript</li>
-        <li><strong>Eventos:</strong> Responda às interações do usuário</li>
-        <li><strong>AJAX:</strong> Comunique com servidores backend</li>
-        <li><strong>ES6+:</strong> Aprenda sintaxe moderna do JavaScript</li>
-        <li><strong>Frameworks:</strong> Explore React, Vue ou Angular</li>
-        <li><strong>Node.js:</strong> Desenvolva backend com JavaScript</li>
-      </ol>
-
-      <div class="image-container">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Desenvolvimento">
-        <div class="image-caption">Seu caminho no desenvolvimento web começa agora!</div>
-      </div>
+      <h2>Boas práticas</h2>
+      <p>Trabalhar com desenvolvimento web envolve algumas práticas que fazem diferença no resultado final:</p>
+      <ul>
+        <li>usar código semântico e organizado;</li>
+        <li>separar estrutura, estilo e comportamento;</li>
+        <li>testar em navegadores diferentes;</li>
+        <li>planejar para otimização de performance;</li>
+        <li>manter o foco no usuário e no acesso universal.</li>
+      </ul>
     </section>
-
-    <footer>
-      <p>📚 Continue aprendendo e praticando para dominar o desenvolvimento web!</p>
-      <a href="../index.html" class="back-link">← Voltar à página principal</a>
-    </footer>
   </main>
-
-  <script>
-    // Exemplo 1: Contador
-    let contador = 0;
-    
-    function incrementar() {
-      contador++;
-      atualizarContador();
-    }
-    
-    function decrementar() {
-      contador--;
-      atualizarContador();
-    }
-    
-    function resetar() {
-      contador = 0;
-      atualizarContador();
-    }
-    
-    function atualizarContador() {
-      document.getElementById('contador').textContent = contador;
-    }
-
-    // Exemplo 2: Alterador de Tema
-    let temaModoEscuro = false;
-    
-    function alternarTema() {
-      temaModoEscuro = !temaModoEscuro;
-      
-      if (temaModoEscuro) {
-        document.body.style.background = '#1a1a1a';
-        document.body.style.color = '#f0f0f0';
-        document.querySelectorAll('section').forEach(s => {
-          s.style.background = '#2a2a2a';
-          s.style.color = '#f0f0f0';
-        });
-        document.querySelectorAll('nav, footer').forEach(e => {
-          e.style.background = '#0a0a0a';
-        });
-      } else {
-        location.reload();
-      }
-    }
-
-    // Exemplo 3: Lista de Tarefas
-    function adicionarTarefa() {
-      const input = document.getElementById('novaTarefa');
-      const tarefa = input.value.trim();
-      
-      if (tarefa === '') {
-        alert('Por favor, digite uma tarefa!');
-        return;
-      }
-      
-      const lista = document.getElementById('listaTarefas');
-      const novoItem = document.createElement('li');
-      novoItem.style.cssText = 'background: #f0f0f0; padding: 0.75rem; margin-bottom: 0.5rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;';
-      
-      novoItem.innerHTML = `
-        ${tarefa}
-        <button onclick="this.parentElement.remove()" style="background: #ff6b6b; color: white; border: none; padding: 0.25rem 0.75rem; border-radius: 4px; cursor: pointer;">Remover</button>
-      `;
-      
-      lista.appendChild(novoItem);
-      input.value = '';
-      input.focus();
-    }
-
-    // Permitir adicionar tarefa ao pressionar Enter
-    document.addEventListener('DOMContentLoaded', function() {
-      const input = document.getElementById('novaTarefa');
-      if (input) {
-        input.addEventListener('keypress', function(e) {
-          if (e.key === 'Enter') {
-            adicionarTarefa();
-          }
-        });
-      }
-    });
-  </script>
+  <footer>
+    <p>Desenvolvimento Web | Página informativa sobre estrutura e processo de criação de sites.</p>
+  </footer>
 </body>
 </html>
